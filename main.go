@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"jash-go/helpers"
 	"os"
-	"strings"
 )
 
 func main() {
@@ -25,7 +24,7 @@ func main() {
 		// Check if command is alias
 		if alias, ok := helpers.ALIASES[cmd.Cmd]; ok {
 			// Reparse in case alias had arguments itself
-			cmd = helpers.ParseInput(alias + " " + strings.Join(cmd.Argv, " "))
+			cmd = helpers.ParseInput(alias + " " + cmd.ArgStr())
 		}
 
 		// Find & execute command
