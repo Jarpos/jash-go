@@ -5,12 +5,16 @@ import (
 	"jash-go/builtins"
 	"jash-go/helpers"
 	"os"
+	"strings"
 )
 
 func main() {
-	cmds := map[string]func([]string){
-		"ls": builtins.ListSubdirectories,
-	}
+	// Commands
+	/* Command map (CMDS) is declared externally in consts.go */
+
+	// Aliases
+	/* Alias map (ALIASES) is declared externally in consts.go */
+
 	scanner := bufio.NewScanner(os.Stdin)
 
 	for {
@@ -20,7 +24,7 @@ func main() {
 		cmd := helpers.ParseInput(scanner.Text())
 
 		// Find & execute command
-		if fnc, ok := cmds[cmd.Cmd]; ok {
+		if fnc, ok := helpers.CMDS[cmd.Cmd]; ok {
 			fnc(cmd.Argv)
 		} else {
 			println(cmd.Cmd + ": command not found")
