@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"jash-go/builtins"
 	"jash-go/helpers"
 	"os"
 	"strings"
@@ -22,6 +21,12 @@ func main() {
 		helpers.PrintPromptStr()
 		scanner.Scan()
 		cmd := helpers.ParseInput(scanner.Text())
+
+		// Check if command is alias
+		if alias, ok := helpers.ALIASES[cmd.Cmd]; ok {
+			// Reparse in case alias had arguments itself
+			cmd = helpers.ParseInput(alias + " " + strings.Join(cmd.Argv, " "))
+		}
 
 		// Find & execute command
 		if fnc, ok := helpers.CMDS[cmd.Cmd]; ok {
