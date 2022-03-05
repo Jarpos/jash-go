@@ -1,6 +1,8 @@
 package helpers
 
-import "jash-go/builtins"
+import (
+	"jash-go/builtins"
+)
 
 // Builtin commands
 var CMDS = map[string]func([]string){
