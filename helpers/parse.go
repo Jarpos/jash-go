@@ -20,10 +20,8 @@ func ParseInput(i string) Command {
 	i = strings.TrimSpace(i)
 	tokens := strings.Split(i, " ")
 
-	var c = Command{
+	return Command{
 		Cmd:  tokens[0],
 		Argv: tokens[1:],
 	}
-
-	return c
 }
