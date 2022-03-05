@@ -13,7 +13,7 @@ func ListSubdirectories(argv []string) {
 
 	files, err := os.ReadDir(p)
 	if err != nil {
-		fmt.Println("Error path: " + p + " does not exist")
+		fmt.Println("Error on: " + err.Error())
 		return
 	}
 
