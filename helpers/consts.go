@@ -12,10 +12,11 @@ type BuiltinCommand struct {
 
 // Builtin commands
 var CMDS = map[string]BuiltinCommand{
-	"ls":    {"Changes current directory" /**********/, builtins.ListSubdirectories},
-	"cd":    {"Lists directory contents" /***********/, builtins.ChangeDirectory},
-	"cat":   {"Prints contents of file to stdout" /**/, builtins.ConcatenateAndPrint},
-	"mkdir": {"Creates new directory" /**************/, builtins.MakeDirectory},
+	"ls":     {"Changes current directory" /**********/, builtins.ListSubdirectories},
+	"cd":     {"Lists directory contents" /***********/, builtins.ChangeDirectory},
+	"cat":    {"Prints contents of file to stdout" /**/, builtins.ConcatenateAndPrint},
+	"mkdir":  {"Creates new directory" /**************/, builtins.MakeDirectory},
+	"mkfile": {"Creates new, empty file" /************/, builtins.MakeFile},
 }
 
 // Command aliases
