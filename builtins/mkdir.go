@@ -8,6 +8,7 @@ import (
 func MakeDirectory(argv []string) {
 	if len(argv) == 0 {
 		fmt.Println("Error: Please specify a directory name")
+		return
 	}
 
 	name := argv[0]
