@@ -29,7 +29,7 @@ func main() {
 
 		// Find & execute command
 		if fnc, ok := helpers.CMDS[cmd.Cmd]; ok {
-			fnc(cmd.Argv)
+			fnc.Function(cmd.Argv)
 		} else {
 			println(cmd.Cmd + ": command not found")
 		}
