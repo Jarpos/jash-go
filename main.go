@@ -10,6 +10,11 @@ func main() {
 	// Commands
 	/* Command map (CMDS) is declared externally in consts.go */
 
+	// Add help command here to avoid InvalidInitCycle error
+	helpers.CMDS["help"] = helpers.BuiltinCommand{
+		Description: "Prints this help", Function: helpers.Help,
+	}
+
 	// Aliases
 	/* Alias map (ALIASES) is declared externally in consts.go */
 

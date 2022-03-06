@@ -1,6 +1,7 @@
 package helpers
 
 import (
+	"fmt"
 	"jash-go/builtins"
 )
 
@@ -11,12 +12,18 @@ type BuiltinCommand struct {
 
 // Builtin commands
 var CMDS = map[string]BuiltinCommand{
-	"ls":  {"Changes current directory" /*****/, builtins.ListSubdirectories},
-	"cd":  {"Lists directory contents" /******/, builtins.ChangeDirectory},
-	"cat": {"Print file content to stdout" /**/, builtins.ConcatenateAndPrint},
+	"ls":  {"Changes current directory" /**********/, builtins.ListSubdirectories},
+	"cd":  {"Lists directory contents" /***********/, builtins.ChangeDirectory},
+	"cat": {"Prints contents of file to stdout" /**/, builtins.ConcatenateAndPrint},
 }
 
 // Command aliases
 var ALIASES = map[string]string{
 	"l": "ls",
+}
+
+func Help(argv []string) {
+	for key, val := range CMDS {
+		fmt.Printf("%s:\t%s\n", key, val.Description)
+	}
 }
