@@ -7,6 +7,7 @@ import (
 // Builtin commands
 var CMDS = map[string]func([]string){
 	"ls": builtins.ListSubdirectories,
+	"cd": builtins.ChangeDirectory,
 }
 
 // Command aliases
