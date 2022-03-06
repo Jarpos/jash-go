@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"jash-go/helpers"
 	"os"
 )
@@ -36,7 +37,7 @@ func main() {
 		if fnc, ok := helpers.CMDS[cmd.Cmd]; ok {
 			fnc.Function(cmd.Argv)
 		} else {
-			println(cmd.Cmd + ": command not found")
+			fmt.Println(cmd.Cmd + ": command not found")
 		}
 	}
 }
