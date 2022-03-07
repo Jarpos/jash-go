@@ -9,11 +9,15 @@ at for any sort of advice on how to write code.
 
 ## todo
  - [ ] Add more builtin shell commands
-  - [ ] help
-  - [ ] exit
-  - [ ] mkdir
-  - [ ] find
-  - [ ] alias
+    - [X] help
+    - [X] exit
+    - [X] mkdir
+    - [X] mkfile
+    - [X] ls
+    - [X] cd
+    - [X] cat
+    - [ ] find
+    - [ ] alias
  - [ ] Add option to launch applications from within shells using PATH or similar
  - [ ] Add up/down arrow functionality for command history
  - [ ] Add option to add aliases
