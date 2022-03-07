@@ -15,8 +15,8 @@ func (c Command) ArgStr() string {
 }
 
 func ParseInput(i string) Command {
-	spaces := regexp.MustCompile(`\s+`)
-	i = spaces.ReplaceAllString(i, " ")
+	reg := regexp.MustCompile(`\s+`)
+	i = reg.ReplaceAllString(i, " ")
 	i = strings.TrimSpace(i)
 	tokens := strings.Split(i, " ")
 
