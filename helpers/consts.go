@@ -17,6 +17,7 @@ var CMDS = map[string]BuiltinCommand{
 	"cat":    {"Prints contents of file to stdout" /**/, builtins.ConcatenateAndPrint},
 	"mkdir":  {"Creates new directory" /**************/, builtins.MakeDirectory},
 	"mkfile": {"Creates new, empty file" /************/, builtins.MakeFile},
+	//"help": {"Prints this help", /******************/, helpers.Help}, <-- added in main.go
 }
 
 // Command aliases
