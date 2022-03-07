@@ -11,7 +11,14 @@ func Tree(argv []string) {
 		path = argv[0]
 	}
 
-	traverse(path, "")
+	_, err := os.ReadDir(path)
+	if err != nil {
+		fmt.Println("Error on: " + err.Error())
+		return
+	}
+
+	fmt.Println(path)
+	traverse(path, "    ")
 }
 
 func traverse(dir string, level string) {
