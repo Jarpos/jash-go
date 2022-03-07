@@ -27,6 +27,6 @@ var ALIASES = map[string]string{
 
 func Help(argv []string) {
 	for key, val := range CMDS {
-		fmt.Printf("%s:\t%s\n", key, val.Description)
+		fmt.Printf("%7s %s\n", key+":", val.Description)
 	}
 }
