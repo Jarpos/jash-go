@@ -18,17 +18,25 @@ func Tree(argv []string) {
 	}
 
 	fmt.Println(path)
-	traverse(path, "    ")
+	traverse(path, 1)
 }
 
-func traverse(dir string, level string) {
+func traverse(dir string, level int) {
 	files, _ := os.ReadDir(dir)
 	for _, file := range files {
 		if file.IsDir() {
-			fmt.Println(level + file.Name())
-			traverse(dir+"/"+file.Name(), level+"    ")
+			fmt.Println(getOffset(level) + file.Name())
+			traverse(dir+"/"+file.Name(), level+1)
 		} else {
-			fmt.Println(level + file.Name())
+			fmt.Println(getOffset(level) + file.Name())
 		}
 	}
+}
+
+func getOffset(level int) string {
+	s := ""
+	for i := 0; i < level; i++ {
+		s += "    "
+	}
+	return s
 }
