@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/fs"
 	"os"
+	"strings"
 )
 
 func Tree(argv []string) {
@@ -26,6 +27,7 @@ func Tree(argv []string) {
 		}
 	}
 
+	path = strings.ReplaceAll(path, "\\", "/")
 	fmt.Println(path)
 	traverse(path, 1, onTraverse)
 }
