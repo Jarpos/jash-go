@@ -2,6 +2,7 @@ package builtins
 
 import (
 	"fmt"
+	"io/fs"
 	"os"
 )
 
@@ -17,23 +18,29 @@ func Tree(argv []string) {
 		return
 	}
 
+	onTraverse := func(f fs.DirEntry, level int) {
+		if f.IsDir() {
+			fmt.Println(getPadding(level) + f.Name())
+		} else {
+			fmt.Println(getPadding(level) + f.Name())
+		}
+	}
+
 	fmt.Println(path)
-	traverse(path, 1)
+	traverse(path, 1, onTraverse)
 }
 
-func traverse(dir string, level int) {
+func traverse(dir string, level int, onTraverse func(fs.DirEntry, int)) {
 	files, _ := os.ReadDir(dir)
 	for _, file := range files {
+		onTraverse(file, level)
 		if file.IsDir() {
-			fmt.Println(getOffset(level) + file.Name())
-			traverse(dir+"/"+file.Name(), level+1)
-		} else {
-			fmt.Println(getOffset(level) + file.Name())
+			traverse(dir+"/"+file.Name(), level+1, onTraverse)
 		}
 	}
 }
 
-func getOffset(level int) string {
+func getPadding(level int) string {
 	s := ""
 	for i := 0; i < level; i++ {
 		s += "    "
