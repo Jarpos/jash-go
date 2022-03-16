@@ -6,10 +6,10 @@ import (
 	"os"
 )
 
-func Find(argv []string) {
+func Find(argv []string) error {
 	if len(argv) != 2 {
 		fmt.Println("Usage: find [filename] [startfolder]")
-		return
+		return nil
 	}
 
 	var results []string
@@ -23,6 +23,7 @@ func Find(argv []string) {
 	for _, result := range results {
 		fmt.Println(result)
 	}
+	return nil
 }
 
 func traverseFind(dir string, onTraverse func(fs.DirEntry, string)) {

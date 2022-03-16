@@ -8,7 +8,7 @@ import (
 
 type BuiltinCommand struct {
 	Description string
-	Function    func([]string)
+	Function    func([]string) error
 }
 
 // Builtin commands
@@ -31,13 +31,14 @@ var ALIASES = map[string]string{
 	"..": "cd ..",
 }
 
-func Help(argv []string) {
+func Help(argv []string) error {
 	for key, val := range CMDS {
 		fmt.Printf("%7s %s\n", key+":", val.Description)
 	}
+	return nil
 }
 
-func Alias(argv []string) {
+func Alias(argv []string) error {
 	if len(argv) == 0 {
 		for key, val := range ALIASES {
 			fmt.Printf("alias %s='%s'\n", key, val)
@@ -45,4 +46,5 @@ func Alias(argv []string) {
 	} else {
 		ALIASES[argv[0]] = strings.Join(argv[1:], " ")
 	}
+	return nil
 }

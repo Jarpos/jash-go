@@ -31,7 +31,11 @@ func main() {
 
 		// Find & execute command
 		if fnc, ok := helpers.CMDS[cmd.Cmd]; ok {
-			fnc.Function(cmd.Argv)
+			err := fnc.Function(cmd.Argv)
+			if err != nil {
+				// Handle error
+				// TODO: Make errors actually do something
+			}
 		} else {
 			fmt.Println(cmd.Cmd + ": command not found")
 		}

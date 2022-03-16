@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func Tree(argv []string) {
+func Tree(argv []string) error {
 	path := "."
 	if len(argv) != 0 {
 		path = argv[0]
@@ -16,7 +16,7 @@ func Tree(argv []string) {
 	_, err := os.ReadDir(path)
 	if err != nil {
 		fmt.Println("Error on: " + err.Error())
-		return
+		return nil
 	}
 
 	onTraverse := func(f fs.DirEntry, level int) {
@@ -30,6 +30,7 @@ func Tree(argv []string) {
 	path = strings.ReplaceAll(path, "\\", "/")
 	fmt.Println(path)
 	traverseTree(path, 1, onTraverse)
+	return nil
 }
 
 func traverseTree(dir string, level int, onTraverse func(fs.DirEntry, int)) {
