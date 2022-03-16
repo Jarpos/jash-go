@@ -19,6 +19,6 @@ at for any sort of advice on how to write code.
     - [X] find
     - [X] alias
  - [ ] Add option to launch applications from within shells using PATH or similar
+ - [ ] Use GoLang Errors for handling errors
  - [ ] Add up/down arrow functionality for command history
- - [ ] Add option to add aliases
  - [ ] Add parser for files that executes shell code
