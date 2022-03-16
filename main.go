@@ -10,11 +10,7 @@ import (
 func main() {
 	// Commands
 	/* Command map (CMDS) is declared externally in consts.go */
-
-	// Add help command here to avoid InvalidInitCycle error
-	helpers.CMDS["help"] = helpers.BuiltinCommand{
-		Description: "Prints this help", Function: helpers.Help,
-	}
+	initCommands()
 
 	// Aliases
 	/* Alias map (ALIASES) is declared externally in consts.go */
@@ -39,5 +35,15 @@ func main() {
 		} else {
 			fmt.Println(cmd.Cmd + ": command not found")
 		}
+	}
+}
+
+func initCommands() {
+	// Add help command here to avoid InvalidInitCycle error
+	helpers.CMDS["help"] = helpers.BuiltinCommand{
+		Description: "Prints this help", Function: helpers.Help,
+	}
+	helpers.CMDS["alias"] = helpers.BuiltinCommand{
+		Description: "Print all aliases or add new one", Function: helpers.Alias,
 	}
 }
