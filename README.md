@@ -16,8 +16,8 @@ at for any sort of advice on how to write code.
     - [X] ls
     - [X] cd
     - [X] cat
-    - [ ] find
-    - [ ] alias
+    - [X] find
+    - [X] alias
  - [ ] Add option to launch applications from within shells using PATH or similar
  - [ ] Add up/down arrow functionality for command history
  - [ ] Add option to add aliases
