@@ -19,6 +19,7 @@ var CMDS = map[string]BuiltinCommand{
 	"mkdir":  {"Creates new directory" /**************/, builtins.MakeDirectory},
 	"mkfile": {"Creates new, empty file" /************/, builtins.MakeFile},
 	"tree":   {"Shows directory tree" /***************/, builtins.Tree},
+	"find":   {"Finds specified file" /***************/, builtins.Find},
 	"exit":   {"Exits the shell" /********************/, builtins.Exit},
 	//"help":  {"Prints this help", /****************\/, helpers.Help}, <-- added in main.go
 	//"alias": {"Prints all aliases", /**************\/, helpers.Aliases}, <-- added in main.go
