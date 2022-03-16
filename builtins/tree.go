@@ -29,15 +29,15 @@ func Tree(argv []string) {
 
 	path = strings.ReplaceAll(path, "\\", "/")
 	fmt.Println(path)
-	traverse(path, 1, onTraverse)
+	traverseTree(path, 1, onTraverse)
 }
 
-func traverse(dir string, level int, onTraverse func(fs.DirEntry, int)) {
+func traverseTree(dir string, level int, onTraverse func(fs.DirEntry, int)) {
 	files, _ := os.ReadDir(dir)
 	for _, file := range files {
 		onTraverse(file, level)
 		if file.IsDir() {
-			traverse(dir+"/"+file.Name(), level+1, onTraverse)
+			traverseTree(dir+"/"+file.Name(), level+1, onTraverse)
 		}
 	}
 }
