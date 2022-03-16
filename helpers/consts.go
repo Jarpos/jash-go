@@ -24,7 +24,8 @@ var CMDS = map[string]BuiltinCommand{
 
 // Command aliases
 var ALIASES = map[string]string{
-	"l": "ls",
+	"l":  "ls",
+	"..": "cd ..",
 }
 
 func Help(argv []string) {
