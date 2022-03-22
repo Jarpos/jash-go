@@ -22,3 +22,5 @@ at for any sort of advice on how to write code.
  - [ ] Use GoLang Errors for handling errors
  - [ ] Add up/down arrow functionality for command history
  - [ ] Add parser for files that executes shell code
+ - [ ] Extend feature set for existing shell commands
+ - [ ] Add better error handling for existing shell commands
