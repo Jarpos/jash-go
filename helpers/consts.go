@@ -22,7 +22,7 @@ var CMDS = map[string]BuiltinCommand{
 	"find":   {"Finds specified file" /***************/, builtins.Find},
 	"exit":   {"Exits the shell" /********************/, builtins.Exit},
 	//"help":  {"Prints this help", /****************\/, helpers.Help}, <-- added in main.go
-	//"alias": {"Prints all aliases", /**************\/, helpers.Aliases}, <-- added in main.go
+	//"alias": {"Prints all aliases", /**************\/, helpers.Alias}, <-- added in main.go
 }
 
 // Command aliases
