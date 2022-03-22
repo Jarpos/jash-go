@@ -35,6 +35,7 @@ func main() {
 			if err != nil {
 				// Handle error
 				// TODO: Make errors actually do something
+				fmt.Println("Error:", err.Error())
 			}
 		} else {
 			fmt.Println(cmd.Cmd + ": command not found")
