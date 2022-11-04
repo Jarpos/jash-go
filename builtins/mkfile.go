@@ -7,7 +7,7 @@ import (
 
 func MakeFile(argv []string) error {
 	if len(argv) == 0 {
-		return errors.New("No file name specified")
+		return errors.New("no file name specified")
 	}
 
 	name := argv[0]
