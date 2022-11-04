@@ -18,7 +18,7 @@ func Factorize(argv []string) error {
 	var number, _ = strconv.Atoi(argv[0])
 	// var sieve = sievePrimes(number)
 	var sieve = sievePrimes(int(math.Sqrt(float64(number))))
-	var bitcount = number
+	var bitcount = len(sieve) * 64 // Maximum Bits allocated
 
 	// var counter int
 	for i := 0; i < bitcount; i++ {
